@@ -1,0 +1,27 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.custom-header, .custom-card, .card-header, .card-footer, .modal-header, .modal-footer {
+  background-color: darkslategray;
+  color: whitesmoke;
+}
+
+h1, h2, h3 {
+  color: whitesmoke;
+}
+
+.custom-card, .custom-modal, .modal-body {
+  border-color: darkslateblue;
+  color: darkslategray;
+}
+
+.card-body, .custom-btn {
+  background-color:ghostwhite;
+  color: darkslategray;
+}
+
+thead {
+  background-color: rgb(215, 46, 46);
+  color: ghostwhite;
+}

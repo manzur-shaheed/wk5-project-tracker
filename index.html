@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="A Simple Project tracker">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <!-- header -->
+    <header class="jumbotron jumbotron-fluid custom-header">
+      <div class="container text-center">
+        <h1 class="display-4">MS Project Tracker</h1>
+        <h2>Current Date & Time: <br> <span id="date-time"></span></h2>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main class="container-fluid">
+      <div class="row">
+        <!-- left side instructions -->
+        <section class="col-12 col-md-4 col-lg-3">
+          <div class="card  custom-card">
+            <h3 class="card-header">Instructions</h3>
+            <div class="card-body">
+              <div class="card-text">
+                Click the button below to open a form and provide information for the following:</div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Project Name</li>
+              <li class="list-group-item">Project Type</li>
+              <li class="list-group-item">Due Date</li>
+              <li class="list-group-item">Hourly Rate</li>
+            </ul>
+            <div class="card-footer">
+              <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#modal">
+                Add Project
+              </button>
+            </div>
+          </div> 
+        </section>
+
+        <!-- right-side table -->
+        <section class="col-12 col-md-8 col-lg-9">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Project Name</th>
+                  <th scope="col">Project Type</th>
+                  <th scope="col">Hourly Rate ($)</th>
+                  <th scope="col">Due Date</th>
+                  <th scope="col">Days Until Due Date</th>
+                  <th scope="col">Potential Total Earnings ($)</th>
+                  <th scope="col" class="p-3"></th>
+                </tr>
+              </thead>
+              <tbody id="project-body">
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Button trigger modal is defined above-->
+    
+    <!-- Modal -->
+    <div class="modal fade custom-modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-form">Add a project.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form>
+              <div class="form-group">
+                <label for="l-pname">Project Name</label>
+                <input type="text" class="form-control" id="i-pname" placeholder="Enter Project Name">
+              </div>
+
+              <div class="form-group">
+                <label for="l-ptype">Project Type</label>
+                <select class="form-control" id="i-ptype"">
+                  <option selected disabled>Pick one...</option>
+                  <option value="Web Application (Front End)">Web Application (Front End)</option>
+                  <option value="Web Application (Back End)">Web Application (Back End)</option>
+                  <option value="Web Application (Full Stack)">Web Application (Full Stack)</option>
+                  <option value="Mobile Application">Mobile Application</option>
+                  <option value="Python Programming">Python Programming</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="l-prate">Hourly Rate ($)</label>
+                <input type="number" class="form-control" id="i-prate" placeholder="$" min=0 required>
+              </div>
+
+              <div class="form-group">
+                <label for="l-pdate">Due Date</label>
+                <input type="datetime" class="form-control" id="i-pdate" placeholder="When is the project due?">
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn custom-btn">Submit Project</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
